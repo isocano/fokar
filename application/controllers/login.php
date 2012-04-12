@@ -7,12 +7,18 @@ class Login extends CI_Controller {
 		$this->load->library(array('form_validation'));
 	}
 	
+	public function logout() 
+	{
+		$this->session->sess_destroy();
+		redirect('/inicio/', 'refresh');
+	}
+	
 	public function index()
 	{
-		/*if ($this->session->userdata('logged_in') == 5)
+		if ($this->session->userdata('logged_in'))
 			redirect('/user/', 'refresh');
 		else 
-		{*/
+		{
 			// Valida las entradas
 			$this->form_validation->set_rules('username', 'username', 'required|trim');
 			$this->form_validation->set_rules('password', 'password', 'required|trim');	
@@ -56,7 +62,7 @@ class Login extends CI_Controller {
 					
 				$this->load->view('templates/footer.php');
 			}
-		//}
+		}
 	}
 }
 
