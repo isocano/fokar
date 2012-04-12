@@ -1,5 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+<<<<<<< HEAD
 class Login extends CI_Controller {
 	function __construct() 
 	{
@@ -62,3 +63,24 @@ class Login extends CI_Controller {
 
 /* End of file inicio.php */
 /* Location: ./application/controllers/inicio.php */
+=======
+class Login extends CI_Controller 
+{
+	function __construct() 
+	{
+		parent::__construct();
+		
+		//TODO quitar		
+		error_reporting(E_ALL);
+		ini_set("display_errors", 1);
+	}
+	
+	function index() 
+	{
+		
+	}
+}
+
+/* End of file login.php */
+/* Location: ./controllers/login.php */
+>>>>>>> e3b5d78fabbf518404165fd79cbc484691598b54
