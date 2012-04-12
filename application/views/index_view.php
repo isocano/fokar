@@ -11,4 +11,10 @@
 			<input type="password" id="password_username" name="password" placeholder="contraseña"/>
 			<input type="submit" value="Entrar"/>
 		</form>
+<?php
+ foreach ($list_kcys['data']['kcy'] as $i) {
+     echo "<p>" .$i['url']. "</p>";
+ }
+ 
+?>
 	</div>
