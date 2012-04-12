@@ -1,6 +1,9 @@
-		<div id="footer">
-			<span>Fokar, All Rights Reserved.</span>
-		</div>
+		<div class="container-fluid">
+			<hr>
+			<footer>
+				<p>&copy; Fokar 2012, All Rights Reserved.</p>
+			</footer>
+		</div><!--/.fluid-container-->
 		<!-- Le javascript
     	================================================== -->
     	<script src="<?php echo $this->config->item('resources');?>js/jquery.js"></script>
