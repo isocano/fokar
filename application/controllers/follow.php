@@ -15,7 +15,13 @@ class Follow extends CI_Controller {
 		if ($this->session->userdata('username') == $follower)
 		{
 			if ($this->user_model->follow($follower, $followed) == TRUE)
-				echo $this->input->get('button_id');
+			{
+				$response['follower'] = $follower;
+				$response['followed'] = $followed;
+				$response['button_id'] = $this->input->get('button_id');
+				
+				echo json_encode($response);
+			}
 			else
 				echo -1;
 		}
@@ -29,7 +35,13 @@ class Follow extends CI_Controller {
 		if ($this->session->userdata('username') == $follower)
 		{
 			if ($this->user_model->unfollow($follower, $unfollowed) == TRUE)
-				echo $this->input->get('button_id');
+			{
+				$response['follower'] = $follower;
+				$response['unfollowed'] = $unfollowed;
+				$response['button_id'] = $this->input->get('button_id');
+				
+				echo json_encode($response);
+			}
 			else
 				echo -1;
 		}
