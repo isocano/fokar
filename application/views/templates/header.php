@@ -13,7 +13,7 @@
               <li><a href="/fokar/ranking">Ranking</a></li>
               <li><a href="/fokar/contact">Contacto</a></li>
             </ul>
-            <p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>
+            <p class="navbar-text pull-right">Logged in as <a href="#">username </a><a href="login/logout">Cerrar sesión</a></p>
           </div><!--/.nav-collapse -->
         </div>
       </div>
