@@ -1,5 +1,3 @@
-	
-
 <div class="container-fluid">
       <div class="row-fluid">
         <div class="span9">
@@ -14,10 +12,22 @@
 			  </thead>
 			  <tbody>
 			  	<?php
-					foreach ($ranking['data']['user'] as $i) {
+					foreach ($ranking['data']['user'] as $user) 
+					{
 						echo '<tr>';
-							echo '<td>' .$i['username']. '</td>';
-							echo '<td><a class="btn btn-small btn-info" href="#"><i class="icon-plus icon-white"></i> Seguir</a></td>';
+							echo '<td>' .$user['username']. '</td>';
+							if ($this->session->userdata('logged_in'))
+							{
+								if ($user['followed'] == FALSE)
+									echo '<td><a class="btn btn-small btn-info" href="#" 
+											onclick="follow(\'' . $this->session->userdata('username') . '\', \'' . $user['username'] . '\')">
+											<i class="icon-plus icon-white"></i> Seguir</a></td>';
+								else 
+									echo '<td><a class="btn btn-small btn-info" href="#" 
+											onclick="unfollow(\'' . $this->session->userdata('username') . '\', \'' . $user['username'] . '\')">
+											<i class="icon-minus icon-white"></i> Dejar de seguir</a></td>';
+								
+							}
 						echo '</tr>';
 					}
 				?>
