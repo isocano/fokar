@@ -12,9 +12,8 @@
 			<input type="submit" value="Entrar"/>
 		</form>
 <?php
- foreach ($list_kcys['data']['kcy'] as $i) {
-     echo "<p>" .$i['url']. "</p>";
- }
- 
+ for ($i=0; $i < sizeof($list_kcys['data']['kcy']); $i++) { 
+  	echo "<p>" .$list_kcys['data']['kcy'][$i]['imgUser']. " - " .$list_kcys['data']['kcy'][$i]['user']. " - " .$list_kcys['data']['kcy'][$i]['title']. " - " .$list_kcys['data']['kcy'][$i]['url']. " - " .$list_kcys['data']['kcy'][$i]['time']. " </p>";   
+ } 
 ?>
 	</div>

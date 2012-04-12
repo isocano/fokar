@@ -1,6 +1,8 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Inicio extends CI_Controller {
+	
+	
 	public function index()
 	{
 		$data_head['title'] = 'Fokar | Inicio';
@@ -10,7 +12,6 @@ class Inicio extends CI_Controller {
 		$this->load->view('templates/header.php');
 		
 		$data_content['list_kcys'] = get_kcy_list(1, 20, 2,$this->config->item('api_key'));
-		
 		
 		$this->load->view('index_view', $data_content);
 		
