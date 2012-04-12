@@ -13,10 +13,18 @@
 		<meta name="google-site-verification" content="">
 		<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
 		
-		<meta name="author" content="Iñaki y Pablo">
+		<meta name="author" content="Pablo Sánchez Lozano, Ignacio Soriano Cano y Pablo Ángel Velasco Molinero">
 		<meta name="Copyright" content="Copyright Fokar 2012. All Rights Reserved.">
 	
-		
+		<!-- Le styles -->
+		<link href="../assets/css/bootstrap.css" rel="stylesheet">
+		<link href="../assets/css/bootstrap-responsive.css" rel="stylesheet">
+		<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+		<!--[if lt IE 9]>
+	      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	    <![endif]-->
+	    
+	    <!-- Le fav and touch icons -->
 		<link rel="shortcut icon" href="img/favicon.ico">
 		<!-- This is the traditional favicon.
 			 - size: 16x16 or 32x32
