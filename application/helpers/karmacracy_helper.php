@@ -6,7 +6,7 @@
  * @package		CodeIgniter
  * @subpackage	Helpers
  * @category	Helpers
- * @author		Pablo Sánchez Lozano
+ * @author		Pablo Sánchez Lozano, Ignacio Soriano Cano, Pablo Ángel Velasco Molinero
  */
 
 
