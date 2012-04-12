@@ -1,6 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-<<<<<<< HEAD
 class Login extends CI_Controller {
 	function __construct() 
 	{
@@ -8,7 +7,7 @@ class Login extends CI_Controller {
 		$this->load->library(array('form_validation'));
 	}
 	
-	
+	//Establece conexión con karmacracy	para comprobar si el usuario y la contraseña son válidos
 	private function confirm_user($username, $password) 
 	{
 		$api_url = "http://karmacracy.com/api/v1/key/check/?u=$username&key=$password&appkey=" . $this->config->item('api_key');
@@ -27,11 +26,11 @@ class Login extends CI_Controller {
 		
 		if ($data != NULL && isset($data['ok']))
 			if ($data['ok'] == 1)
-				echo 'credenciales correctos';
+				return 'true';
 			else
-				echo 'credenciales incorrectos';
+				return 'false';
 		else 	
-			echo 'error';
+			return 'error';
 	}
 	
 	public function index()
@@ -55,32 +54,24 @@ class Login extends CI_Controller {
 				$password = $this->input->post('password');
 				
 				// Si existe el usuario se redirecciona a profile
-				$this->confirm_user($username, $password);
+				$response = $this->confirm_user($username, $password);
+				
+				if ($response == 'true') 
+				{
+					//Credenciales correcto
+				}
+				else if ($response == 'false')
+				{
+					//Credenciales erróneos
+				}
+				else 
+				{
+					//Se produjo un error en la conexión	
+				}
 			}
 		}
 	}
 }
 
-/* End of file inicio.php */
-/* Location: ./application/controllers/inicio.php */
-=======
-class Login extends CI_Controller 
-{
-	function __construct() 
-	{
-		parent::__construct();
-		
-		//TODO quitar		
-		error_reporting(E_ALL);
-		ini_set("display_errors", 1);
-	}
-	
-	function index() 
-	{
-		
-	}
-}
-
 /* End of file login.php */
-/* Location: ./controllers/login.php */
->>>>>>> e3b5d78fabbf518404165fd79cbc484691598b54
+/* Location: ./application/controllers/login.php */
