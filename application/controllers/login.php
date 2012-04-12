@@ -56,23 +56,31 @@ class Login extends CI_Controller {
 				// Si existe el usuario se redirecciona a profile
 				$response = $this->confirm_user($username, $password);
 				
-				if ($response == 'true') 
+				if ($response == 'true')		//Credenciales correctos 
 				{
-					//Credenciales correcto
+					$this->session->userdata('logged_in', TRUE);
+					$this->session->userdata('username', $username);
+					$this->session->userdata('password', $password);
 				}
-				else if ($response == 'false')
-				{
-					//Credenciales erróneos
-				}
-				else 
-				{
-					//Se produjo un error en la conexión	
-				}
+				else if ($response == 'false')	//Credenciales erróneos
+					$data_content['message'] = 'El usuario o la contraseña no es correcto';
+				else 							//Se produjo un error en la conexión
+					$data_content['message'] = 'Se produjo un error en la conexión';
+						
+				$data_head['title'] = 'Bienvenido a Fokar';
+				$data_head['description'] = 'Sigue a personas con karma en base al sistema de karmacracy.';
+					
+				$this->load->view('templates/head.php', $data_head);
+				$this->load->view('templates/header.php');
+					
+				$this->load->view('index_view', $data_content);
+					
+				$this->load->view('templates/footer.php');
 			}
 		}
 	}
 }
 
 
-/* End of file inicio.php */
-/* Location: ./application/controllers/inicio.php */
+/* End of file login.php */
+/* Location: ./application/controllers/login.php */

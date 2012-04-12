@@ -1,11 +1,9 @@
 <?php $base_url = $this->config->item('base_url') ?>
 	
 	<div id="content">
-		<h4>Hasta ahora se han registrado estos usuarios</h4>
-		<ul>
-		<?php
-			foreach ($users as $user) 
-				echo "<li>$user->NAME</li>";
+		<?php 
+			if (isset($message))
+				echo $message;
 		?>
 		</ul>
 		<form id="login" method="post" action="<?php echo $base_url . 'login';?>">

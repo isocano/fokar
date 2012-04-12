@@ -8,12 +8,7 @@ class Inicio extends CI_Controller {
 		
 		$this->load->view('templates/head.php', $data_head);
 		$this->load->view('templates/header.php');
-		
-		$this->load->model('user_model');
-		$data_content['users'] = $this->user_model->get_users();
-		
 		$this->load->view('index_view', $data_content);
-		
 		$this->load->view('templates/footer.php');
 	}
 }
