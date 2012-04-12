@@ -5,9 +5,9 @@
 ?>
 	
 	<div id="content">
-		<h2>¡Bienvenido a FOKAR!</h2>
+		<h3>¡Bienvenido a FOKAR!</h3>
 		<a href="login/logout">Cerrar sesión</a>
-		<p>Estos son tus datos</p>
+		<h3>Estos son tus datos</h3>
 			<ul>
 				<li>Username: <?php echo $userdata['username']?></li>
 				<li>Ranking: <?php echo $userdata['kcyrank']?></li>
@@ -16,7 +16,7 @@
 				<li>Media clicks: <?php echo $userdata['stats']['koi']?></li>
 				<li>Imagen: <br/><img width="128" src="<?php echo $userdata['img']?>" alt="imagen del usuario"/></li>
 			</ul>
-		<p>Estos son tus enlaces compartidos</p>
+		<h3>Estos son tus enlaces compartidos</h3>
 		<div id="links">
 			<?php 
 			 	foreach ($kcys as $kcy) {
@@ -24,4 +24,7 @@
 				 }
 			?>
 		</div>
+		<h3>¿Por qué no sigues a alguno de estos pollos?</h3>
+		
+		
 	</div>

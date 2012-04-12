@@ -7,11 +7,34 @@ class User_model extends CI_Model
 		parent::__construct();
 	}
 	
-	function get_users () 
+	//Obtiene los usuarios de la aplicación
+	function get_users() 
 	{
 		$query = $this->db->get('user');
 		
 		return $query->result();
+	}
+	
+	//Añade un usuario a la aplicación
+	function add_user($data)
+	{
+		$this->db->insert('user', $data);
+	}
+	
+	function is_registered($username)
+	{
+		$this->db->where('NAME', $username);
+		$query = $this->db->get('user');
+		
+		if ($query->row() != NULL)
+			return TRUE;
+		
+		return FALSE;
+	} 
+	
+	function follow()
+	{
+		
 	}
 }
 	

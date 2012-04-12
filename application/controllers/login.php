@@ -5,6 +5,7 @@ class Login extends CI_Controller {
 	{
 		parent::__construct(); 
 		$this->load->library(array('form_validation'));
+		$this->load->model('user_model');
 	}
 	
 	public function logout() 
@@ -39,17 +40,20 @@ class Login extends CI_Controller {
 				//TODO QUITAR ESTO!!!
 				$response = 'true';
 				
-				if ($response == 'true')		//Credenciales correctos 
+				if ($response == 'true')									//Credenciales correctos 
 				{
 					$this->session->set_userdata('logged_in', TRUE);
 					$this->session->set_userdata('username', $username);
 					$this->session->set_userdata('password', $password);
 					 
+					if (!$this->user_model->is_registered($username))		//Si el usuario no estaba registrado, lo añadimos a la BD
+						$this->user_model->add_user(array('NAME' => $username));
+						
 					redirect('/user/', 'refresh');
 				}
-				else if ($response == 'false')	//Credenciales erróneos
+				else if ($response == 'false')								//Credenciales erróneos
 					$data_content['message'] = 'El usuario o la contraseña no es correcto';
-				else 							//Se produjo un error en la conexión
+				else 														//Se produjo un error en la conexión
 					$data_content['message'] = 'Se produjo un error en la conexión';
 						
 				$data_head['title'] = 'Bienvenido a Fokar';
