@@ -7,6 +7,7 @@ class Contact extends CI_Controller {
 	{
 		$data_head['title'] = 'Fokar | Contacto';
 		$data_head['description'] = 'Sigue a personas con karma en base al sistema de karmacracy.';
+		$data_head['activeView'] = 3;
 		
 		$this->load->view('templates/head.php', $data_head);
 		$this->load->view('templates/header.php');
