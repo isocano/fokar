@@ -12,6 +12,7 @@
 			  </thead>
 			  <tbody>
 			  	<?php
+			  		$id = 0;
 					foreach ($ranking['data']['user'] as $user) 
 					{
 						echo '<tr>';
@@ -20,15 +21,16 @@
 							{
 								if ($user['followed'] == FALSE)
 									echo '<td><a class="btn btn-small btn-info" href="#" 
-											onclick="follow(\'' . $this->session->userdata('username') . '\', \'' . $user['username'] . '\')">
-											<i class="icon-plus icon-white"></i> Seguir</a></td>';
+											onclick="follow(\'' . $this->session->userdata('username') . '\', \'' . $user['username'] . '\', \'' . $id . '\')">
+											<span id="'.$id.'"><i class="icon-plus icon-white"></i> Seguir</span></a></td>';
 								else 
 									echo '<td><a class="btn btn-small btn-info" href="#" 
-											onclick="unfollow(\'' . $this->session->userdata('username') . '\', \'' . $user['username'] . '\')">
-											<i class="icon-minus icon-white"></i> Dejar de seguir</a></td>';
+											onclick="unfollow(\'' . $this->session->userdata('username') . '\', \'' . $user['username'] . '\', \'' . $id . '\')">
+											<span id="'.$id.'"><i class="icon-minus icon-white"></i> Dejar de seguir</span></a></td>';
 								
 							}
 						echo '</tr>';
+						$id ++;
 					}
 				?>
 			  </tbody>

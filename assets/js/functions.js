@@ -41,7 +41,7 @@ function callback_unfollow()
 function follow(follower, followed, button_id)
 {
 	var req = new XMLHttpRequest();
-	req.open('GET', "http://localhost/fokar/follow/follow?" + 'follower=' + follower + '&followed=' + followed + '&button_id=' + button_id, false);
+	req.open('GET', "http://localhost/fokar/follow/do_follow?" + 'follower=' + follower + '&followed=' + followed + '&button_id=' + button_id, false);
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     req.onreadystatechange = callback_follow;
     req.send(); 
@@ -50,7 +50,7 @@ function follow(follower, followed, button_id)
 function unfollow(follower, unfollowed, button_id)
 {
 	var req = new XMLHttpRequest();
-	req.open('GET', "http://localhost/fokar/follow/follow?" + 'follower=' + follower + '&unfollowed=' + unfollowed + '&button_id=' + button_id, false);
+	req.open('GET', "http://localhost/fokar/follow/do_unfollow?" + 'follower=' + follower + '&unfollowed=' + unfollowed + '&button_id=' + button_id, false);
 	req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     req.onreadystatechange = callback_unfollow;
     req.send(); 
