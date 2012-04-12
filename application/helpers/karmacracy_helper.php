@@ -63,3 +63,16 @@ function get_kcys($username, $api_key, $from, $num)
 	else 
 		return 'error';
 }
+
+//Obtiene el ranking de los más influyentes 
+function get_ranking($inicio, $final, $api_key) 
+{
+	$api_url = "http://karmacracy.com/api/v1/rank/?appkey=$api_key&from=$inicio&num=$final";     
+	
+	$data = curl_connection($api_url);
+	
+	if ($data != NULL)
+		return $data;
+	else 	
+		echo 'error';
+}	

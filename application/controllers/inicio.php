@@ -9,7 +9,7 @@ class Inicio extends CI_Controller {
 		$this->load->view('templates/head.php', $data_head);
 		$this->load->view('templates/header.php');
 		
-		$data_content['list_kcys'] = $this->get_kcy_list(1, 20, 2);
+		$data_content['list_kcys'] = get_kcy_list(1, 20, 2,$this->config->item('api_key'));
 		
 		
 		$this->load->view('index_view', $data_content);
