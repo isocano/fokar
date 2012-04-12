@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Temps de generació: 12-04-2012 a les 14:37:05
+-- Temps de generació: 12-04-2012 a les 14:56:04
 -- Versió del servidor: 5.5.16
 -- Versió de PHP : 5.3.8
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `user` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `NAME` varchar(30) NOT NULL,
+  `NAME` varchar(40) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `NAME` (`NAME`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
@@ -49,8 +49,8 @@ INSERT INTO `user` (`ID`, `NAME`) VALUES
 
 CREATE TABLE IF NOT EXISTS `user_follow` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `FOLLOWER` int(11) NOT NULL,
-  `FOLLOWED` int(11) NOT NULL,
+  `FOLLOWER` varchar(40) NOT NULL,
+  `FOLLOWED` varchar(40) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 

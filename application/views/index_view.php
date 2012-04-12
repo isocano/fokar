@@ -6,4 +6,5 @@
 				echo "<li>$user->NAME</li>";
 		?>
 		</ul>
+		
 	</div>
