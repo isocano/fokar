@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Temps de generació: 12-04-2012 a les 13:20:00
+-- Temps de generació: 12-04-2012 a les 14:37:05
 -- Versió del servidor: 5.5.16
 -- Versió de PHP : 5.3.8
 
@@ -31,7 +31,15 @@ CREATE TABLE IF NOT EXISTS `user` (
   `NAME` varchar(30) NOT NULL,
   PRIMARY KEY (`ID`),
   UNIQUE KEY `NAME` (`NAME`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+
+--
+-- Bolcant dades de la taula `user`
+--
+
+INSERT INTO `user` (`ID`, `NAME`) VALUES
+(2, 'isocano'),
+(1, 'velasco');
 
 -- --------------------------------------------------------
 
