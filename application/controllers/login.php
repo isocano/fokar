@@ -9,10 +9,10 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{
-		if ($this->session->userdata('logged_in'))
+		/*if ($this->session->userdata('logged_in') == 5)
 			redirect('/user/', 'refresh');
 		else 
-		{
+		{*/
 			// Valida las entradas
 			$this->form_validation->set_rules('username', 'username', 'required|trim');
 			$this->form_validation->set_rules('password', 'password', 'required|trim');	
@@ -28,7 +28,7 @@ class Login extends CI_Controller {
 				$password = $this->input->post('password');
 				
 				// Si existe el usuario se redirecciona a profile
-				$response = confirm_user($username, $password);
+				$response = confirm_user($username, $password, $this->config->item('api_key'));
 				
 				//TODO QUITAR ESTO!!!
 				$response = 'true';
@@ -56,7 +56,7 @@ class Login extends CI_Controller {
 					
 				$this->load->view('templates/footer.php');
 			}
-		}
+		//}
 	}
 }
 

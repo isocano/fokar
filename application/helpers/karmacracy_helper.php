@@ -26,9 +26,9 @@ function curl_connection ($api_url)
 }
 
 //Establece conexión con karmacracy	para comprobar si el usuario y la contraseña son válidos
-function confirm_user($username, $password)
+function confirm_user($username, $password, $api_key)
 {
-	$api_url = "http://karmacracy.com/api/v1/key/check/?u=$username&key=$password&appkey=" . $this->config->item('api_key');
+	$api_url = "http://karmacracy.com/api/v1/key/check/?u=$username&key=$password&appkey=$api_key";
 	$data = curl_connection($api_url);
 	
 	if ($data != NULL && isset($data['ok']))
@@ -41,8 +41,8 @@ function confirm_user($username, $password)
 }
 
 //Obtiene los kcys de un determinado usuario
-function get_kcys($username) 
+function get_kcys($username, $api_key) 
 {
-	$api_url = "http://karmacracy.com/api/v1/user/$username?kcy=1&from=11&num=10&appkey=" . $this->config->item('api_key');
+	$api_url = "http://karmacracy.com/api/v1/user/$username?kcy=1&from=11&num=10&appkey=$api_key";
 	$data = curl_connection($api_url);
 }
