@@ -7,37 +7,36 @@ class Follow extends CI_Controller {
 		$this->load->model('user_model');
 	}
 	
-	public function follow() 
+	public function do_follow() 
 	{
 		$follower = $this->input->get('follower');
 		$followed = $this->input->get('followed');
 		
 		if ($this->session->userdata('username') == $follower)
 		{
-			if (!$this->user_model->follow($follower, $followed))
-				echo -1;
-			else
+			if ($this->user_model->follow($follower, $followed) == TRUE)
 				echo $this->input->get('button_id');
+			else
+				echo -1;
 		}
 	}
 	
-	public function unfollow() 
+	public function do_unfollow() 
 	{
 		$follower = $this->input->get('follower');
 		$followed = $this->input->get('unfollowed');
 		
 		if ($this->session->userdata('username') == $follower)
 		{
-			if (!$this->user_model->unfollow($follower, $unfollowed))
-				echo -1;
-			else
+			if ($this->user_model->unfollow($follower, $unfollowed) == TRUE)
 				echo $this->input->get('button_id');
+			else
+				echo -1;
 		}
 	}
 	
 	public function index()
 	{
-		
 	}
 }
 

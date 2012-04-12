@@ -48,25 +48,27 @@ class User_model extends CI_Model
 	//Un usuario (follower) decide seguir a otro (followed)
 	function follow($follower, $followed)
 	{
-		if (!is_followed($follower, $followed))
+		if (!$this->is_followed($follower, $followed))
 		{
 			$data =  array('FOLLOWER' => $follower, 'FOLLOWED' => $followed);
 			$this->db->insert('user_follow', $data);
+			return TRUE;
 		}
-		else 
-			return FALSE;
+		
+		return FALSE;
 	}
 	
 	//Un usuario (follower) decide dejar de seguir a otro (followed)
 	function unfollow($follower, $unfollowed)
 	{
-		if (is_followed($follower, $followed))
+		if ($this->is_followed($follower, $followed))
 		{
 			$this->db->where(array('FOLLOWER' => $follower, 'FOLLOWED' => $unfollowed));
 			$this->db->delete('user_follow'); 
+			return TRUE;
 		}
-		else 
-			return FALSE;
+		
+		return FALSE;
 	}
 }
 	
