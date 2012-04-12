@@ -41,9 +41,9 @@ function confirm_user($username, $password, $api_key)
 }
 
 // Obtiene una lista de kcys, type 1 -> populares, type 2 -> fecha
-function get_kcy_list($inicio, $final, $type) 
+function get_kcy_list($inicio, $final, $type, $api_key) 
 {
-	$api_url = "http://karmacracy.com/api/v1/world/?appkey=" . $this->config->item('api_key'). "&from=$inicio&num=$final&type=$type";     
+	$api_url = "http://karmacracy.com/api/v1/world/?appkey=$api_key&from=$inicio&num=$final&type=$type";     
 	
 	$data = curl_connection($api_url);
 	
@@ -52,6 +52,7 @@ function get_kcy_list($inicio, $final, $type)
 	else 	
 		echo 'error';
 }
+
 //Obtiene los kcys de un determinado usuario
 function get_kcys($username, $api_key) 
 {
