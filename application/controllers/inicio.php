@@ -7,6 +7,7 @@ class Inicio extends CI_Controller {
 	{
 		$data_head['title'] = 'Fokar | Inicio';
 		$data_head['description'] = 'Sigue a personas con karma en base al sistema de karmacracy.';
+		$data_head['activeView'] = 1;
 		
 		$this->load->view('templates/head.php', $data_head);
 		$this->load->view('templates/header.php');
