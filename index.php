@@ -1,5 +1,9 @@
 <?php
 
+//TODO Quitar al salir a producción
+error_reporting(E_ALL); //si queremos que nos muestre los errores
+
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
