@@ -3,7 +3,7 @@
 class User extends CI_Controller {
 	public function index()
 	{
-		if ($this->session->userdata('logged_in') == TRUE)
+		if ($this->session->userdata('logged_in'))
 		{
 			$data_head['title'] = 'Bienvenido a Fokar';
 			$data_head['description'] = 'Sigue a personas con karma en base al sistema de karmacracy.';

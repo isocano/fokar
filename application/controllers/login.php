@@ -61,9 +61,9 @@ class Login extends CI_Controller {
 				
 				if ($response == 'true')		//Credenciales correctos 
 				{
-					$this->session->userdata('logged_in', TRUE);
-					$this->session->userdata('username', $username);
-					$this->session->userdata('password', $password);
+					$this->session->set_userdata('logged_in', TRUE);
+					$this->session->set_userdata('username', $username);
+					$this->session->set_userdata('password', $password);
 					 
 					redirect('/user/', 'refresh');
 				}
