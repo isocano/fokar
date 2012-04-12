@@ -8,7 +8,8 @@ function callback_follow()
         	
         	if (follow != -1)
         	{
-        		$('#' + follow).html('<i class="icon-minus icon-white"></i> Dejar de seguir</a>');
+        		$('#' + follow).html('<td id="' + follow[0].id + '"><a class="btn btn-small btn-info" href="#" onclick="follow(\'' 
+        								+ follow[0].follower + '\', \'' + follow[0].followed + '\', \'' + follow[0].button_id + '\')"><i class="icon-plus icon-white"></i> Seguir</a></td>');
         	}
         	else
         	{
@@ -28,7 +29,9 @@ function callback_unfollow()
         	
         	if (unfollow != -1)
         	{
-        		$('#' + unfollow).html('<i class="icon-plus icon-white"></i> Seguir</a>');
+        		$('#' + unfollow).html('<td id="' + unfollow[0].id + '"><a class="btn btn-small btn-info" href="#" onclick="follow(\'' 
+        								+ unfollow[0].follower + '\', \'' + unfollow[0].unfollowed + '\', \'' + unfollow[0].button_id + '\')"><i class="icon-plus icon-white"></i> Seguir</a></td>');
+        	
         	}
         	else
         	{

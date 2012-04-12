@@ -8,6 +8,7 @@ class User extends CI_Controller {
 		{
 			$data_head['title'] = 'Bienvenido a Fokar';
 			$data_head['description'] = 'Sigue a personas con karma en base al sistema de karmacracy.';
+			$data_head['activeView'] = 0;
 			
 			$this->load->view('templates/head.php', $data_head);
 			$this->load->view('templates/header.php');
