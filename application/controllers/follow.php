@@ -24,7 +24,7 @@ class Follow extends CI_Controller {
 	public function do_unfollow() 
 	{
 		$follower = $this->input->get('follower');
-		$followed = $this->input->get('unfollowed');
+		$unfollowed = $this->input->get('unfollowed');
 		
 		if ($this->session->userdata('username') == $follower)
 		{

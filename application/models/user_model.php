@@ -61,7 +61,7 @@ class User_model extends CI_Model
 	//Un usuario (follower) decide dejar de seguir a otro (followed)
 	function unfollow($follower, $unfollowed)
 	{
-		if ($this->is_followed($follower, $followed))
+		if ($this->is_followed($follower, $unfollowed))
 		{
 			$this->db->where(array('FOLLOWER' => $follower, 'FOLLOWED' => $unfollowed));
 			$this->db->delete('user_follow'); 
