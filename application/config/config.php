@@ -47,6 +47,10 @@ $config['index_page'] = '';
 */
 $config['uri_protocol']	= 'AUTO';
 
+
+/* API KEY FOR KARMACRACY */
+$config['api_key'] = 'd3mpr3n.ded0r3s';
+
 /*
 |--------------------------------------------------------------------------
 | URL suffix
