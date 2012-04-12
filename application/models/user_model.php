@@ -53,6 +53,8 @@ class User_model extends CI_Model
 			$data =  array('FOLLOWER' => $follower, 'FOLLOWED' => $followed);
 			$this->db->insert('user_follow', $data);
 		}
+		else 
+			return FALSE;
 	}
 	
 	//Un usuario (follower) decide dejar de seguir a otro (followed)
@@ -63,6 +65,8 @@ class User_model extends CI_Model
 			$this->db->where(array('FOLLOWER' => $follower, 'FOLLOWED' => $unfollowed));
 			$this->db->delete('user_follow'); 
 		}
+		else 
+			return FALSE;
 	}
 }
 	
