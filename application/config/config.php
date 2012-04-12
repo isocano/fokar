@@ -17,6 +17,11 @@
 $config['base_url']	= 'http://localhost/fokar/';
 
 /*
+ * This folder contains js/css/image files. 
+*/
+$config['resources'] = $config['base_url'] . 'assets/';
+
+/*
 |--------------------------------------------------------------------------
 | Index File
 |--------------------------------------------------------------------------
