@@ -56,11 +56,16 @@ class Login extends CI_Controller {
 				// Si existe el usuario se redirecciona a profile
 				$response = $this->confirm_user($username, $password);
 				
+				//TODO QUITAR ESTO!!!
+				$response = 'true';
+				
 				if ($response == 'true')		//Credenciales correctos 
 				{
 					$this->session->userdata('logged_in', TRUE);
 					$this->session->userdata('username', $username);
 					$this->session->userdata('password', $password);
+					 
+					redirect('/user/', 'refresh');
 				}
 				else if ($response == 'false')	//Credenciales erróneos
 					$data_content['message'] = 'El usuario o la contraseña no es correcto';
